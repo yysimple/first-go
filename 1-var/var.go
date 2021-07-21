@@ -42,7 +42,7 @@ func main() {
 
 	fmt.Println("---------------------------")
 
-	// 4. 声明一个变量，使用 ： ，这样可以省略 var，自动推断出其类型
+	// 4. 声明一个变量，使用 ： ，这样可以省略 1-var，自动推断出其类型
 	ageZl := 20
 	fmt.Println("ageZl = ", ageZl)
 	fmt.Printf("类型为：%T\n", ageZl)
