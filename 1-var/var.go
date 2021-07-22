@@ -72,6 +72,6 @@ func main() {
 		ageQe  int    = 15
 		nameQe string = "前二"
 	)
-	println("ageQe = ", ageQe, "nameQe = ", nameQe)
+	fmt.Println("ageQe = ", ageQe, "nameQe = ", nameQe)
 
 }
