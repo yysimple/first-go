@@ -22,6 +22,12 @@ func main() {
 		fmt.Println("A")
 	}()
 
+	// 这里是传入参数的协程，且有返回值的，但是返回值目前是无法接收的，需要配个channel一起实现
+	go func(a, b int) bool {
+		fmt.Println("a =", a, "b =", b)
+		return true
+	}(10, 20)
+
 	// 这里写个死循环，类似于项目跑起来后，主线程一直在
 	for {
 		time.Sleep(2 * time.Second)
