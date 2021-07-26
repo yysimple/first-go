@@ -9,11 +9,31 @@ type User struct {
 	Id   int
 	Name string
 	Age  int
+	// panic: reflect.Value.Interface: cannot return value obtained from unexported field or method
+	// weight float64
 }
 
 func (t User) Call(user User) {
 	fmt.Println("method Call()...")
 	fmt.Printf("value =%v\n", t)
+}
+
+func (u User) MethodA(user User) {}
+
+func (u User) methodA(user User) {}
+
+func (u User) MethodB() {}
+
+func (u User) methodB() {}
+
+func (u *User) MethodC() {}
+
+func (u User) MethodD(user User) {}
+
+func (u *User) Show(user *User) {
+	fmt.Println("user.Id =", user.Id)
+	fmt.Println("user.Name =", user.Name)
+	fmt.Println("user.Age =", user.Age)
 }
 
 func main() {
@@ -54,8 +74,6 @@ func getFieldAndMethod(all interface{}) {
 	for i := 0; i < allType.NumMethod(); i++ {
 		m := allType.Method(i)
 		fmt.Printf("str = %s, value = %v\n", m.Name, m.Type)
-		value := m.Func
-		fmt.Printf("value = %v\n", value)
 	}
 
 }
