@@ -5,6 +5,9 @@ import "fmt"
 // 相当于定义了一个常量值
 const name = "zs"
 
+// Missing value in the const declaration
+// const weight float64
+
 // iota,必须和const一起使用，iota是按行数增加的
 const (
 	// iota = 0,然后依次往下递增
