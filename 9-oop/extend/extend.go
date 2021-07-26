@@ -15,7 +15,7 @@ func (t *Human) Walk() {
 	fmt.Println("Human.Walk() ...")
 }
 
-// 之类
+// 子类
 type SuperMan struct {
 	// 这样写就继承了父类
 	Human
