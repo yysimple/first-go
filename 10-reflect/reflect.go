@@ -76,4 +76,11 @@ func getFieldAndMethod(all interface{}) {
 		fmt.Printf("str = %s, value = %v\n", m.Name, m.Type)
 	}
 
+	fmt.Println("---------------------------")
+
+	allTypeElem := reflect.TypeOf(&all).Elem()
+	for i := 0; i < allTypeElem.NumMethod(); i++ {
+		m := allTypeElem.Method(i)
+		fmt.Printf("str = %s, value = %v\n", m.Name, m.Type)
+	}
 }
