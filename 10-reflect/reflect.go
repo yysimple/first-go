@@ -41,6 +41,18 @@ func main() {
 		Id: 1, Name: "zyy", Age: 18,
 	}
 	getFieldAndMethod(user)
+
+	fmt.Println("---------------------------")
+
+	getFieldAndMethodPoint(&user)
+}
+
+func getFieldAndMethodPoint(all interface{}) {
+	allTypeElem := reflect.TypeOf(all).Elem()
+	for i := 0; i < allTypeElem.NumMethod(); i++ {
+		m := allTypeElem.Method(i)
+		fmt.Printf("str = %s, value = %v\n", m.Name, m.Type)
+	}
 }
 
 func getFieldAndMethod(all interface{}) {
@@ -73,14 +85,6 @@ func getFieldAndMethod(all interface{}) {
 	*/
 	for i := 0; i < allType.NumMethod(); i++ {
 		m := allType.Method(i)
-		fmt.Printf("str = %s, value = %v\n", m.Name, m.Type)
-	}
-
-	fmt.Println("---------------------------")
-
-	allTypeElem := reflect.TypeOf(&all).Elem()
-	for i := 0; i < allTypeElem.NumMethod(); i++ {
-		m := allTypeElem.Method(i)
 		fmt.Printf("str = %s, value = %v\n", m.Name, m.Type)
 	}
 }
