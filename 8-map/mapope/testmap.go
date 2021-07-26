@@ -15,13 +15,16 @@ func main() {
 
 	fmt.Println("---------------")
 
+	// 删除操作
 	delete(fruitMap, "apple")
+
 	for k, v := range fruitMap {
 		fmt.Println("key =", k, "value =", v)
 	}
 
 	fmt.Println("---------------")
 
+	// 修改元素
 	fruitMap["yangmei"] = "very sour"
 	for k, v := range fruitMap {
 		fmt.Println("key =", k, "value =", v)
