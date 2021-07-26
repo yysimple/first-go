@@ -2,6 +2,17 @@ package main
 
 import "fmt"
 
+/**
+1. func：声明是个函数，对应Java中的方法
+2. returnMethod：对应的是方法名称
+3. a int: 参数，这里可以是多个参数，如果都是 int，我们可以这样什么 (a, b int)
+4. int：这是返回值类型
+*/
+func returnMethod(a int) int {
+	c := 1
+	return c
+}
+
 // 返回一个值
 func returnOne(a int) int {
 	fmt.Println("------- returnOne ---------")
